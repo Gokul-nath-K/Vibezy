@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name":  "Ennai Vittu",
+        "title": "Recently Played",
+        "imagePath": "ennai-vittu.jpg",
+        "Path": "Pictures/ennai-vittu.jpg"
+    },
+    {
+        "id": 2,
+        "name":  "Trending Now",
+        "title": "Hits Different",
+        "imagePath": "arabic-kuthu.jpg",
+        "Path": "Pictures/arabic-kuthu.jpg"
+    },
+    {
+        "id": 3,
+        "name":  "Kadhal Kadhal",
+        "title": "Hits Different",
+        "imagePath": "engeyum-kadhal.jpg",
+        "Path": "Pictures/engeyum-kadhal.jpg"
+    },
+    {
+        "id": 4,
+        "name":  "High On Love",
+        "title": "Hits Different",
+        "imagePath": "moonu.jpg",
+        "Path": "Pictures/moonu.jpg"
+    },
+    {
+        "id": 5,
+        "name":  "Top Tamil Kuthu",
+        "title": "Hits Different",
+        "imagePath": "pathala.jpg",
+        "Path": "Pictures/pathala.jpg"
+    },
+    {
+        "id": 6,
+        "name":  "Anirudh",
+        "title": "Recommended Artist Radio",
+        "imagePath": "anirudh.jpg",
+        "Path": "Pictures/anirudh.jpg"
+    },
+    {
+        "id": 7,
+        "name":  "Yuvan",
+        "title": "Recommended Artist Radio",
+        "imagePath": "yuvan.jpg",
+        "Path": "Pictures/yuvan.jpg"
+    },
+    {
+        "id": 8,
+        "name":  "AR Rahman",
+        "title": "Recommended Artist Radio",
+        "imagePath": "malare2.jpg",
+        "Path": "Pictures/rahman.jpg"
+    },
+    {
+        "id": 9,
+        "name":  "Ilayaraja",
+        "title": "Recommended Artist Radio",
+        "imagePath": "ilayaraj.jpg",
+        "Path": "Pictures/ilayaraj.jpg"
+    }
+]
