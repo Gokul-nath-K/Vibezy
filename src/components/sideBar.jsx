@@ -56,7 +56,7 @@ function SideBar() {
     {
       text: "HOME",
       icon: <HomeRoundedIcon />,
-      path: 'home',
+      path: '/main',
     },
     {
       text: "SEARCH",

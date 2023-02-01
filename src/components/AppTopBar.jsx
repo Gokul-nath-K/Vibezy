@@ -66,12 +66,14 @@ function AppTopBar() {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
+                    <Link to='profile'>
                     <MenuItem>
                         <ListItemIcon>
                           <AccountCircleRounded /> 
                         </ListItemIcon>
                         My account
                     </MenuItem>
+                    </Link>
                     <Divider />
                     <Link to='/' style={{textDecoration:'none', color:'black'}}>
                       <MenuItem>

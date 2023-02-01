@@ -1,15 +1,11 @@
-import { Button, ButtonGroup, FormControlLabel, Checkbox, Typography, makeStyles, Grid } from '@material-ui/core';
-import { ButtonBase } from '@mui/material';
+import { Button, FormControlLabel, Checkbox, Typography, makeStyles, Grid } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
-import { spacing } from '@mui/system';
-
+import '../styles.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    // backgroundColor: "grey",
-    marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -23,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '15px',
     marginBottom: '18px'
   },
+  
 }));
 
 
@@ -32,24 +29,9 @@ function SigninPage() {
   const classes = useStyles();
   return ( 
     <>
-      <div className={classes.outerContainer}>
-        <div className={classes.paper} >
+      <div className={classes.outerContainer} id="outerContainer">
+        <div className={classes.paper} id='paper' >
           <form className='form-root'>
-            {/* <ButtonBase
-              sx={{
-                alignItem: 'center'
-              }}
-            >
-              <Link to='/signIn'>
-                <Button> Sign in </Button>
-              </Link>
-              <Link to='/signUp'>
-                <Button> Sign up </Button>
-              </Link>
-              <Link to='/signindemo'>
-                <Button> Sign in demo</Button>
-              </Link>
-            </ButtonBase> */}
           <TextField
             variant='outlined'
             margin= 'normal'
@@ -90,7 +72,7 @@ function SigninPage() {
                 forgot password?
               </Grid >
               <Grid item >
-                <Link to='signup' style={{textDecoration:'none'}}> Don't have an account? Sign Up </Link>
+                <Link to='/signup' style={{textDecoration:'none'}}> Don't have an account? Sign Up </Link>
               </Grid >
             </Grid>
           </Typography>

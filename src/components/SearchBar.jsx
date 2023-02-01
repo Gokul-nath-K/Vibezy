@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   searchField: {
     padding: "1 %",
     borderRadius: 50,
-    backgroundColor: "white",
+    backgroundColor: "whitec",
     width: "600",
   },
   root: {

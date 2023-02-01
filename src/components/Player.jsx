@@ -1,52 +1,57 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import "../App.css";
 import MusicControlBar from "./MusicControlBar";
-import {SongData} from '../Data/Songs'
+import { SongData } from "../Data/Songs";
+import { songContext, songs, userContext } from "../Data/userContext";
 
 const Player = () => {
-
-  const [song , setSong] = useState(SongData);
-  const [value , setValue] = useState(0);
-  const [isPlaying, setisplaying] = useState(false);
+  const { song, setsong } = useContext(songs);
+  const [value, setValue] = useState(0);
   const [loopActive, setloopActive] = useState(false);
-  const [currentSong, setcurrentSong] = useState(SongData[0]);
+  const { currentsong, setcurrentsong } = useContext(songContext);
+  const { isplaying, setisplaying } = useContext(userContext);
 
   useEffect(() => {
-    
-    if(isPlaying) {
+    if (isplaying) {
       audioElement.current.play();
-    }
-    else {
+    } else {
       audioElement.current.pause();
     }
-  }, [isPlaying])
-  
-  const onplaying = () => {
+  }, [isplaying, currentsong]);
 
+  const onplaying = () => {
     const duration = audioElement.current.duration;
     const cur_time = audioElement.current.currentTime;
-    
-    setcurrentSong({...currentSong, "progress": cur_time / duration * 100, "length": duration});
-    setValue(`${currentSong.progress}`);
-  }
+
+    setcurrentsong({
+      ...currentsong,
+      progress: (cur_time / duration) * 100,
+      length: duration,
+    });
+    setValue(`${currentsong.progress}`);
+  };
   const audioElement = useRef();
 
   return (
     <>
-      <audio src={require("../Songs/" + currentSong.musicName)}  ref={audioElement} onTimeUpdate={onplaying} />
-      <MusicControlBar 
-      song={song} 
-      setSong={setSong} 
-      isPlaying={isPlaying} 
-      setisplaying={setisplaying}
-      audioElement={audioElement}
-      currentSong={currentSong}
-      setcurrentSong={setcurrentSong}
-      loopActive={loopActive}
-      value={value}
+      <audio
+        src={require("../Songs/" + currentsong.musicName)}
+        ref={audioElement}
+        onTimeUpdate={onplaying}
+      />
+      <MusicControlBar
+        song={song}
+        setSong={setsong}
+        isPlaying={isplaying}
+        setisplaying={setisplaying}
+        audioElement={audioElement}
+        currentSong={currentsong}
+        setcurrentSong={setcurrentsong}
+        loopActive={loopActive}
+        value={value}
       />
     </>
   );
-}
+};
 
 export default Player;

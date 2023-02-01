@@ -4,13 +4,12 @@ import { ButtonBase } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { spacing } from '@mui/system';
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-
+import '../styles.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -35,9 +34,9 @@ function SignupPage() {
   const classes = useStyles();
   return ( 
     <>
-      <div className={classes.outerContainer}>
-        <div className={classes.paper} >
-          <form className='form-root'>
+      <div className={classes.outerContainer} id="outerContainer">
+        <div className={classes.paper}  id='paper' >
+          <form className='form-root' >
           <TextField
             variant='outlined'
             margin= 'normal'
@@ -66,7 +65,7 @@ function SignupPage() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link to='/'  className={classes.submit}>
+          <Link to='/main' className={classes.submit}>
           <Button
             className={classes.submit}
             type='submit'

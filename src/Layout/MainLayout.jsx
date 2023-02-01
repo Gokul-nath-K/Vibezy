@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import AppTopBar from "../components/AppTopBar";
 import Player from "../components/Player";
 import SideBar from "../components/sideBar";
+import { songs } from "../Data/userContext";
+import { userContext, songContext } from "../Data/userContext";
 
 export default function MainLayout() {
+  const { isplaying, setisplaying } = useContext(userContext);
+  const { currentsong, setcurrentsong } = useContext(songContext);
+  const { song, setsong } = useContext(songs);
+
   return (
     <>
       <div className="app-top-bar">
@@ -17,7 +23,13 @@ export default function MainLayout() {
         <Outlet />
       </div>
       <div className="music-control-bar">
-        <Player />
+        <userContext.Provider value={{ isplaying, setisplaying }}>
+          <songContext.Provider value={{ currentsong, setcurrentsong }}>
+            <songs.Provider value={{ song, setsong }}>
+              <Player />
+            </songs.Provider>
+          </songContext.Provider>
+        </userContext.Provider>
       </div>
     </>
   );

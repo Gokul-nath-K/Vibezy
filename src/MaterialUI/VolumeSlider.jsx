@@ -1,23 +1,30 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Slider from '@material-ui/core/Slider';
-import VolumeDown from '@material-ui/icons/VolumeDown';
-import VolumeUp from '@material-ui/icons/VolumeUp';
+import React, { useRef, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Slider from "@material-ui/core/Slider";
+import VolumeDown from "@material-ui/icons/VolumeDown";
+import VolumeUp from "@material-ui/icons/VolumeUp";
 
 const useStyles = makeStyles({
   root: {
     width: 180,
-    color: '#ffffff'
+    color: "#ffffff",
   },
 });
 
-export default function ContinuousSlider() {
+export default function ContinuousSlider({ volume, setVolume, audioElement }) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(30);
+  const [value, setValue] = useState(50);
+  const clickRef = useRef();
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleVolumeChange = (e, newvalue) => {
+    let width = clickRef.current.clientWidth;
+    const offset = e.nativeEvent.offsetX;
+
+    const divprogress = offset / width;
+
+    setValue(newvalue);
+    audioElement.current.volume = value;
   };
 
   return (
@@ -27,7 +34,7 @@ export default function ContinuousSlider() {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+          <Slider ref={clickRef} aria-labelledby="continuous-slider" />
         </Grid>
         <Grid item>
           <VolumeUp />
