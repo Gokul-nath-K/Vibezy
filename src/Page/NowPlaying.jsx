@@ -6,6 +6,8 @@ import AppTopBar from "../components/AppTopBar";
 import SideBar from "../components/sideBar";
 import MusicControlBar from "../components/MusicControlBar";
 import MusicControlBar2 from "../components/MusicControl2";
+import { useState } from "react";
+import { SongData } from "../Data/Songs";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,8 +50,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CurrentSongPage( ) {
+export default function CurrentSongPage() {
   const classes = useStyles();
+  const [currentsong, setcurrentsong] = useState(SongData[0]);
 
   return (
     <>
@@ -64,10 +67,10 @@ export default function CurrentSongPage( ) {
         </div>
         <div>
           <Typography variant="h4" className={classes.songname}>
-            Ranjithame
+            {  currentsong.title }
           </Typography>
           <Typography variant="h5" className={classes.songdetails}>
-            Song by M.M. Manasi and Thalapathy Vijay
+            Song by M.M. Manasi and Thalapathy vijay
             <br/>
           </Typography>
         </div>

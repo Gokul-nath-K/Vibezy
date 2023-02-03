@@ -32,9 +32,9 @@ function HomePage() {
 
   const handleClick = (index) => {
     
-    console.log(index);
+    // console.log(index);
     setcurrentsong(song[index]);
-    console.log(currentsong);
+    // console.log(currentsong);
     setisplaying(true);
   };
 
@@ -60,7 +60,8 @@ function HomePage() {
                     ).map((record) => {
                       return (
                         <div className="col-md-3" key={record.id} onClick={() => handleClick(record.id)}>
-                          <Card
+                          <div className="Card" >
+                          <Card 
                             sx={{
                               maxWidth: 200,
                               maxHeight: 250,
@@ -83,6 +84,7 @@ function HomePage() {
                             </CardContent>
                           </Card>
                           <br />
+                          </div>
                         </div>
                       );
                     })}

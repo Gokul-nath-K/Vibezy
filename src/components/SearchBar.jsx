@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Box, makeStyles, TextField } from "@material-ui/core";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import Records from "../Data/homePage_db.json";
+import { songContext, songs, userContext } from "../Data/userContext";
 
 const useStyles = makeStyles({
   h6: {
@@ -14,9 +15,9 @@ const useStyles = makeStyles({
   },
   searchField: {
     padding: "1 %",
-    borderRadius: 50,
-    backgroundColor: "whitec",
+    backgroundColor: "white",
     width: "600",
+    // fontSize: 200,
   },
   root: {
     display: 'flex',
@@ -31,6 +32,9 @@ const useStyles = makeStyles({
 
 function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
+  const { isplaying, setisplaying } = useContext(userContext);
+  const { currentsong, setcurrentsong } = useContext(songContext);
+  const { song, setsong } = useContext(songs);
 
   let handleChange = (e) => {
     e.preventDefault();
@@ -46,13 +50,21 @@ function SearchBar() {
     }
   });
 
+  const handleClick = (index) => {
+    
+    // console.log(index);
+    setcurrentsong(song[index]);
+    // console.log(currentsong);
+    setisplaying(true);
+  };
+
   const classes = useStyles();
   return (
     <>
       <TextField
         id="outlined-basic"
         onChange={handleChange}
-        variant="filled"
+        variant="outlined"
         fullWidth
         placeholder="Search"
         className={classes.searchField}
@@ -68,7 +80,8 @@ function SearchBar() {
                   key={record.id}
                   style={{ color: "white" }}
                 >
-                  <Card
+                  <div className="Card">
+                  <Card onClick={() => handleClick(record.id)}
                     className={classes.root}
                     sx={{
                       maxWidth: 250,
@@ -96,6 +109,7 @@ function SearchBar() {
                   </Card>
                   <br />
                   <br />
+                  </div>
                 </div>
             );
           })}

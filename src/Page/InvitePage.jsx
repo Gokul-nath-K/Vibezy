@@ -43,6 +43,7 @@ export default function InvitePage() {
         <>
               <Typography variant='h4' className={classes.name}>Invite A Friend !</Typography>
             <div>
+              <a href='https://web.whatsapp.com/'>
               <Button className={classes.root}>
               <Card 
               style = {{boxShadow:"none"}}>
@@ -52,9 +53,11 @@ export default function InvitePage() {
                   />
               </Card>
               </Button>
+              </a>
               <Typography className={classes.button1}>Whatsapp</Typography>
             </div>
             <div>
+            <a href='https://mail.google.com/mail/u/0/#inbox?compose=new'>
             <Button className={classes.root1}>
             <Card 
               style = {{boxShadow:"none"}}>
@@ -64,9 +67,11 @@ export default function InvitePage() {
                   />
               </Card>
               </Button>
+              </a>
               <Typography className={classes.button2}>Mail</Typography>
             </div>
             <div>
+            <a href='https://www.instagram.com/accounts/login/'>
             <Button className={classes.root2}>
             <Card 
               style = {{boxShadow:"none"}}>
@@ -76,6 +81,7 @@ export default function InvitePage() {
                   />
               </Card>
               </Button>
+            </a>
               <Typography className={classes.button3}>Instagram</Typography>
             </div>
         </>     

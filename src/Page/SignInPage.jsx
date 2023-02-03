@@ -68,9 +68,9 @@ function SigninPage() {
           className={ classes.typography }
           >
             <Grid container>
-              <Grid item xs >
+              {/* <Grid item xs >
                 forgot password?
-              </Grid >
+              </Grid > */}
               <Grid item >
                 <Link to='/signup' style={{textDecoration:'none'}}> Don't have an account? Sign Up </Link>
               </Grid >

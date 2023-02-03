@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute", left: "47%", bottom: "40%", color:'white'
   },
   button1: {
-    position: "absolute",top: "68%",left: "10.5%",right: "70%",color: "white", fontSize: "20px"
+    position: "absolute",top: "68%",left: "10.5%",right: "70%",color: "white", fontSize: "23px"
   },
   invite: {
     position: "absolute",top: "68%",left: "47.5%",right: "70%",color: "white", fontSize: "20px"
@@ -50,7 +50,7 @@ export default function ProfilePage() {
             </div>
             <div>
                 <Typography variant='h4' className={classes.username}>Gokul</Typography>
-                <Button className={classes.button1}>Edit</Button>
+                <Typography variant='h4' className={classes.button1}>OPTIONS :</Typography>
                 <NavLink to='invite'>
                 <Button className={classes.invite}>Invite</Button>
                 </NavLink>

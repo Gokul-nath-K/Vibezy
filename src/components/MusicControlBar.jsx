@@ -102,18 +102,18 @@ let MusicControlBar = ({song, setcurrentSong, audioElement, isPlaying, setisplay
                 <SkipNextTwoToneIcon className={classes.icon} />
               </IconButton>
 
-              <IconButton className={classes.icon}>
+              {/* <IconButton className={classes.icon}>
                 <LoopOutlined  className={classes.icon} />
-              </IconButton>
+              </IconButton> */}
             </div>
           </div>
           <div className="col-md-4" id="music-div-3">
-            <Button>
+            {/* <Button>
               <ContinuousSlider
                 className={classes.icon}
                 audioElement={audioElement}
               />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

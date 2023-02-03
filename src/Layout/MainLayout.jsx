@@ -20,7 +20,9 @@ export default function MainLayout() {
         <SideBar />
       </div>
       <div className="content-container">
+      <songContext.Provider value={{ currentsong, setcurrentsong }} >
         <Outlet />
+        </songContext.Provider>
       </div>
       <div className="music-control-bar">
         <userContext.Provider value={{ isplaying, setisplaying }}>
