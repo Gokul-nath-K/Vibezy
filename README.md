@@ -1,3 +1,7 @@
+# Vibezy
+
+This is a music player app which use react js as front-end framework.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
